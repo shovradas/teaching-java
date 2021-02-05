@@ -1,5 +1,5 @@
-package Elementary;
-
+package IO.Elementary;
+import java.util.Scanner;
 public class InterestCalculator2 {
     public static void main(String[] args) {
         //gain after X years 

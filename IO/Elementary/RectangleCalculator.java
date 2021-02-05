@@ -1,5 +1,5 @@
-package Elementary;
-
+package IO.Elementary;
+import java.util.Scanner;
 public class RectangleCalculator {
     public static void main(String[] args) {
         int height =5;

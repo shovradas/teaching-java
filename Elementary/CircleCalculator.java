@@ -1,4 +1,4 @@
-package Elementary_IO;
+package Elementary;
 
 public class CircleCalculator {
     public static void main(String[] args) {

@@ -1,5 +1,5 @@
-package Elementary;
-
+package IO.Elementary;
+import java.util.Scanner;
 //import java.util.Scanner;
 
 public class VATCalculator {

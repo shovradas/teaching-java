@@ -1,5 +1,5 @@
-package Elementary;
-
+package IO.Elementary;
+import java.util.Scanner;
 public class UniversityHelper {
     public static void main(String[] args) {
        int numOfExaminees = 30;
