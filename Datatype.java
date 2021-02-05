@@ -1,10 +1,8 @@
-import java.lang.reflect.Array;
-
 class Datatype{  
 public static void main(String[] args){  
     Boolean one = false;
     byte a = 10;
-    short s = 10000; short r = -5000;
+    short s = 10000; 
     int i = 5;
     long l = 100000L;
     float f=10.5f;  

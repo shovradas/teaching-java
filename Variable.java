@@ -1,5 +1,3 @@
-import javax.xml.crypto.Data;
-
 public class Variable {
  //Write a program that will declare local, instance, and static variable and print them
 
