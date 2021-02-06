@@ -2,17 +2,32 @@ package Function.IfElse.Character;
 
 public class CaseDeterminer {
 
-    static void determinant(char ch) {
-
+    static String determine(char ch) {
         if ((ch >= 'A') && (ch <= 'Z')) {
-            System.out.println(ch + " : this letter is presented in upper case");
+            return "Uppercase";            
         } else {
-            System.out.println(ch + " : this letter is presented in Lower case");
+            return "Lowercase";
         }
-        return;
     }
 
     public static void main(String[] args) {
-        determinant('c');
+        System.out.println(determine('c'));
     }
+
+
+    // static boolean isUpperCase(char ch) {
+    //     if ((ch >= 'A') && (ch <= 'Z')) {
+    //         return true;            
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
+    // public static void main(String[] args) {
+    //     if(isUpperCase('c') == true){
+    //         System.out.println("uppercase");
+    //     } else{
+    //         System.out.println("lowercase");
+    //     }
+    // }
 }
