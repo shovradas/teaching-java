@@ -1,21 +1,20 @@
-package IfElse.Character;
-import java.util.Scanner;
+package Function.IfElse.Character;
+//import java.util.Scanner;
 public class CaseConverter {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the letter : ");
-        char ch = sc.next().charAt(0);
+    static char convert(char ch){
         int ascii_Value = ch;
         
         if ((ch >= 'A') && (ch <='Z')){
             int t = (ascii_Value+32);
-            ch = (char)t;
-            System.out.println("UpperCase of the letter is : " + ch); //http://www.asciitable.com/
-        }
+            ch = (char)t;}
         else{
             int p =(ascii_Value-32);
-            ch = (char)p;
-           System.out.println("UpperCase of the letter is : " + ch);
-        }
+            ch = (char)p;}
+        return ch;
+    }
+    public static void main(String[] args) {
+    
+            System.out.println("UpperCase of the letter is : " + convert('C'));
+
     }
 }

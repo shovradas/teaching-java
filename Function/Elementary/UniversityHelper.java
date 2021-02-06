@@ -1,10 +1,11 @@
-package Elementary;
-
+package Function.Elementary;
 public class UniversityHelper {
-    public static void main(String[] args) {
-       int numOfExaminees = 30;
-       int numOfSeats = 10;
 
-       System.out.println("Contestants are going to compete for each seat : " + (numOfExaminees/numOfSeats));
+    static int compete(int numOfExaminees, int numOfSeats){
+        int competeForEachSit = numOfExaminees/numOfSeats;
+        return competeForEachSit;
+    }
+    public static void main(String[] args) {
+       System.out.println("Contestants are going to compete for each seat : " + compete(30,10));
     }
 }

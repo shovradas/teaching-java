@@ -1,5 +1,4 @@
-package Elementary;
-
+package Function.Elementary;
 public class InterestCalculator2 {
     public static void main(String[] args) {
         //gain after X years 
