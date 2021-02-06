@@ -1,15 +1,18 @@
 package IO.Elementary;
+
 import java.util.Scanner;
+
 public class InterestCalculator1 {
     public static void main(String[] args) {
-        // gain after X years
-        int years = 5;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter years : ");
+        int years = sc.nextInt();
 
-        // given deposit amount
-        double deposit_amount = 10000.00;
+        System.out.println("Enter deposit_amount : ");
+        Double deposit_amount = sc.nextDouble();
 
-        // flat interest rate
-        double interest_percentge = 9.5;
+        System.out.println("Enter interest_percentge : ");
+        Double interest_percentge = sc.nextDouble();
 
         // calculate the interest amount
         double interest_amount = (years * deposit_amount * interest_percentge) / 100;
