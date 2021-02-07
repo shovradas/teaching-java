@@ -1,28 +1,27 @@
-package Function.IfElse.Number;
+package Method.IfElse.Number;
 
 import java.util.Scanner;
 
 public class Equality {
-    static void equal(int a, int b, int c) {
-        if ((a == b) && (b == c)) {
-            System.out.println("all 3 equal");
+    static String equal(int num1, int num2, int num3) {
+        if ((num1 == num2) && (num2 == num3)) {
+            return "all 3 equal";
         } else {
-            System.out.println("not all equal");
+            return "not all equal";
         }
-        return;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the first number : ");
-        int a = sc.nextInt();
+        int num1 = sc.nextInt();
 
         System.out.println("Enter the second number : ");
-        int b = sc.nextInt();
+        int num2 = sc.nextInt();
 
         System.out.println("Enter the third number : ");
-        int c = sc.nextInt();
+        int num3 = sc.nextInt();
 
-        equal(a, b, c);
+        System.out.println(equal(num1, num2, num3));
     }
 }

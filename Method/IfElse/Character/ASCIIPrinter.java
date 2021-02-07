@@ -1,4 +1,4 @@
-package Function.IfElse.Character;
+package Method.IfElse.Character;
 
 public class ASCIIPrinter {
 

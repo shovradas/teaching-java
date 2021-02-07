@@ -1,4 +1,4 @@
-package Function.Elementary;
+package Method.Elementary;
 
 public class RectangleCalculator {
 

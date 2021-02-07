@@ -1,4 +1,4 @@
-package Function.Elementary;
+package Method.Elementary;
 public class UniversityHelper {
 
     static int compete(int numOfExaminees, int numOfSeats){

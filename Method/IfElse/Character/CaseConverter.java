@@ -1,4 +1,4 @@
-package Function.IfElse.Character;
+package Method.IfElse.Character;
 //import java.util.Scanner;
 public class CaseConverter {
     static char convert(char ch){
