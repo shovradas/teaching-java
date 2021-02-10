@@ -1,9 +1,8 @@
 package Loops.While;
 
-//Write a program that will print all the digits of a given number.
-public class PrintDigits {
-    public static void main(String args[]) {
-        int number = 1234567;
+public class one_complement {
+    public static void main(String[] args) {
+        int number = 1011;
         int reminder;
         int count = 0;
         int temp = number;
@@ -15,8 +14,18 @@ public class PrintDigits {
         while (temp > 0) {
             reminder = temp % 10;
             System.out.println(reminder);
+            if (reminder == 1){
+                int num = reminder-1;
+                System.out.println(num);
+            }
+            else{
+                int num = reminder +1;
+                System.out.println(num);
+            }
             temp = temp / 10;
             count--;
+
+           
         }
     }
 }

@@ -1,8 +1,8 @@
 package Loops.While;
-//Write a program to print the formatted Series: 11, 22, 43, 84, 165, 326, …., NM
+//Write a program to print the formatted Series: 11, 22, 34, 48, 516, 632, …., NM
 import java.util.Scanner;
 
-public class formattedSeries10 {
+public class formattedSeries11 {
     public static void main(String[] args) {
         int i = 1;
         Scanner scanner = new Scanner(System.in);
@@ -17,11 +17,11 @@ public class formattedSeries10 {
             System.out.println(num);
             i++;
         }
-        // System.out.println("Reversed Number: " + num);
-        // // 11+11 = 22;
-        // // 22+21 = 43;
-        // // 43+41 = 85;
-        // // 85+81 = 165;
-        // }
     }
 }
+
+// 11 -> 22 = 11
+// 22 - > 34 = 12
+// 34 -> 48 = 14
+// 48 ->516 = 468
+// 516 -> 632 = 116
