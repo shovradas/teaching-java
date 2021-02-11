@@ -12,10 +12,10 @@ public class formattedSeries3 {
         System.out.println("Enter the value of 'n' : ");
         int n = scanner.nextInt();
         scanner.close();
-        //int n = 10;
-        while (i<=n){
-            sum = sum*2;
+        // int n = 10;
+        while (i <= n) {
             System.out.println(sum);
+            sum = sum * 2;
             i++;
         }
     }

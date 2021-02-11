@@ -11,9 +11,13 @@ public class formattedSeries1 {
         int n = scanner.nextInt();
         scanner.close();
         while (i <= n) {
-            System.out.println(i);
+            System.out.print(i);
+            if (i < n) { // jotokhon porjonto "i" -> "n" er cheye coto totokhon "," print korbe.
+                System.out.print(",");
+            }
             i++;
         }
+
     }
-    
+
 }

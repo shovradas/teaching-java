@@ -1,26 +1,26 @@
 package Loops.While.Number;
 
-
 public class nine_comp {
     public static void main(String[] args) {
 
         int number = 1234567;
-        int reminder;
+        int reminder = 0;
         int count = 0;
-        int temp = number;
-        int n_complement;
-
+        int n_complement = 0;
+        int reverse = 0;
+        // int temp = reverse;
         while (number > 0) {
-            number = number / 10; // reduce the number or discard the last digits
-            count++;
+            int digit = number % 10;
+            reverse = reverse * 10 + digit;
+            number = number / 10;
         }
-        while (temp > 0) {
-            reminder = temp % 10;
-            // System.out.println(reminder);
-            temp = temp / 10;
-            count--;
+        while (reverse > 0) {
+            reminder = reverse % 10;
             n_complement = 9 - reminder;
-            System.out.println(n_complement);
+            System.out.print(n_complement);
+            reverse = reverse / 10;
+            count--;
         }
+
     }
 }
