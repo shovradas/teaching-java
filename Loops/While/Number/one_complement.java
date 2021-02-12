@@ -13,7 +13,7 @@ public class one_complement {
             reverse = reverse * 10 + digit;
             number = number / 10;
         }
-        // System.out.print(reverse);
+         System.out.print(reverse);
         while (reverse > 0) {
             reminder = reverse % 10;
             one_complement = 1 - reminder;

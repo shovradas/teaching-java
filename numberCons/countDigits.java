@@ -10,7 +10,7 @@ public class countDigits {
             reminder = n%10; // last digit ta alade korlam -> 12345 % 10 = 5; 1234%10 = 4;...
             // System.out.println(reminder);
             n=n/10; // [ata loop er variable er value coto kortece]
-        if (reminder != 0){ //jokhoni reminder pabe count ++
+        if ( i<= n){ //jokhoni reminder pabe count ++
             count++;}
         }
         System.out.println(count);
