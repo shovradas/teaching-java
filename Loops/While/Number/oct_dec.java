@@ -2,21 +2,23 @@ package Loops.While.Number;
 
 public class oct_dec {
     public static void main(String[] args) {
+        int i = 1;
+        int power = 1;
         int n = 27;
-        int reminder = 0;
+        int reminder;
         int dec = 0;
-        int i = 0;
-        int count = 0;
-        // int test = 0;
 
-        while (n > 0) {
-            reminder = n % 10; // 7 & 2
-            dec = dec + (reminder * 8 * count) + reminder; 
-            if (i <= n) {
-                count++;
-            }
-            n = n / 10;
+        while (n>0) {
+        reminder = n%10;
+        if (i==1){ 
+        power=power*i;}
+        else{
+            power=power*8;
         }
-        System.out.println(dec);
+            dec = dec + (power*reminder);
+            n = n/10;
+            i++;
+            System.out.println(dec);
+        }System.out.println(dec);
     }
 }

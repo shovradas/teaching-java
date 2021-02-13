@@ -2,23 +2,23 @@ package Loops.While.Number;
 
 public class bin_dec {
     public static void main(String[] args) {
-        int n = 10111;
-        int reminder=0;
-        int reverse = 1;
-        int i = 0;
-        int count = 0;
-        int test = 0;
+        int i = 1;
+        int power = 1;
+        int number = 10111;
+        int reminder;
+        int dec = 0;
 
-        while (n > 0) {
-            reminder = n % 10;
-            if (i<=n){
-                count++;
-            }
-            reverse = reverse + (2*count*reminder) ;
-            //System.out.println(reverse);
-            n = n / 10;
-        }System.out.println(reverse);
-        // test = 2^2*1;
-        // System.out.println(test);
+        while (number>0) {
+        reminder = number%10;
+        if (i==1){ // for 2^0=1 when i is initiating with 1
+        power=power*i;}
+        else{
+            power=power*2; //from i++ = 2 and onwards power would be 2^i
+        }
+            dec = dec + (power*reminder);
+            number = number/10;
+            i++;
+            //System.out.println(dec);
+        }System.out.println(dec);
     }
 }

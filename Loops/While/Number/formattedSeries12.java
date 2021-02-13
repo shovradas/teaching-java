@@ -13,12 +13,10 @@ public class formattedSeries12 {
         scanner.close();
         while (i <= n) {
             int x = i;
-            // System.out.println(x);
-            // System.out.println(y);
             System.out.print(x + "" + y);
             y = y * 2;
             if (i < n) {
-                System.err.print(",");
+                System.out.print(",");
             }
             // System.out.println(y);
 
