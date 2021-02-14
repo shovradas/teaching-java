@@ -7,8 +7,8 @@ public class number36_1comp {
         int count = 0;
         int one_complement = 0;
         int reverse = 0;
-
-        for (int i=0; 1<= number; i++) {
+        
+        for (int i=-2; i<= number; i++) {
             int digit = number % 10;
             reverse = reverse * 10 + digit;
             number = number / 10;
