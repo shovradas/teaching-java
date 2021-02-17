@@ -16,7 +16,7 @@ public class factors3 {
             // if number is divided by i
             // i is the factor
             if (number % i == 0) {
-                System.out.println(" " + i);
+                //System.out.println(" " + i);
                 sum = sum +i;
             }
             i++;

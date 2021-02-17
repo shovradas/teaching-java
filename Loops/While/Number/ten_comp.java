@@ -4,12 +4,11 @@ package Loops.While.Number;
 public class ten_comp {
     public static void main(String[] args) {
 
-        int ten_complement;
-        int number = 1234567;
+        int number = 1234;
         int reminder = 0;
-        int count = 0;
         int n_complement = 0;
         int reverse = 0;
+        int num = 0;
 
         while (number > 0) {
             int digit = number % 10;
@@ -19,11 +18,9 @@ public class ten_comp {
         while (reverse > 0) {
             reminder = reverse % 10;
             n_complement = 9 - reminder;
+            num = num*10+ n_complement;
             reverse = reverse / 10;
-            count--;
-            ten_complement = n_complement + 1;
-            System.out.print(ten_complement);
         }
-
+        System.out.print(num + 1);
     }
 }

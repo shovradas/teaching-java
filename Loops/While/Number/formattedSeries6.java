@@ -12,7 +12,7 @@ public class formattedSeries6 {
         int n = scanner.nextInt();
         scanner.close();
 
-        while(i<=7){
+        while(i<=5){
             n=n/10;
             System.out.println(n);
             i++;

@@ -12,7 +12,7 @@ public class formatted_Series1 {
         int limit = 7;
 
         while (i <= limit) {
-            System.out.print(number + " + ");
+            System.out.print(number + " , ");
             number = (number * 10) + 3;
             i++;
         }

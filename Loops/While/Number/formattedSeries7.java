@@ -13,8 +13,8 @@ public class formattedSeries7 {
         int l = 10;
 
         while(i <=l){
-            n=n+2;
             System.out.println(n);
+            n=n+2;
             i++;
         }
     }

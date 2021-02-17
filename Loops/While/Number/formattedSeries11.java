@@ -6,16 +6,16 @@ import java.util.Scanner;
 public class formattedSeries11 {
     public static void main(String[] args) {
         int i = 1;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number : ");
-        int num = scanner.nextInt();
-        scanner.close();
-        int x = 10;
+        int x = 1;
+        int y;
         // int series = 11;
-        while (i < 10) {
-            x = num / 10 * 10 + 1; // 1*10+1 = 21
-            num = num + x;
-            System.out.println(num);
+        while (i <= 5) {
+            y = i;
+            System.out.print(y + "" + x);
+            x = x * 2;
+            if (i < 5) {
+                System.out.print(",");
+            }
             i++;
         }
     }

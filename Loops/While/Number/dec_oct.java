@@ -1,9 +1,9 @@
 package Loops.While.Number;
 
 public class dec_oct {
-    
-public static void main(String[] args) {
-    int n = 222;
+
+    public static void main(String[] args) {
+        int n = 23;
         int reminder = 0;
         int num = 0;
         int oct = 0;

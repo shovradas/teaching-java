@@ -5,9 +5,7 @@ public class primeNumber {
 
     int num = 13, i = 1;
     // boolean flag = false;
-    int a = num / 2;
     boolean prime_number = true;
-    System.out.println(a);
     while( i <= num / 2) // because a number is not divisible by more than its half.
     {
       // condition for nonprime number

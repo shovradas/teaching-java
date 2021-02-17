@@ -8,7 +8,7 @@ public class number2 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter last limit n : ");
         int n = scanner.nextInt();
-        scanner.close();;
+        scanner.close();
         for (int i=1; i<=n; i++){
             System.out.print(i);
             if (i == n) { 

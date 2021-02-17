@@ -11,10 +11,10 @@ public class formatted_series {
         System.out.println("enter first number : ");
         int number = scanner.nextInt();
         scanner.close();
-        int limit = 10;
+        int limit = 5;
 
         while (i <= limit) {
-            System.out.print(number + " + ");
+            System.out.print(number + " , ");
             number = (number * 10) + 9;
             i++;
         }

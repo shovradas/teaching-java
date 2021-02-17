@@ -7,8 +7,6 @@ public class factors2 {
         // positive number
         int number = 60;
 
-        System.out.print("Factors of " + number + " are: ");
-
         // loop runs from 1 to 60
         int i = 1;
         int count = 0;

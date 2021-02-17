@@ -3,7 +3,7 @@ package Loops.While.Character;
 public class ASCII {
     public static void main(String[] args) {
         int i = 0;
-    while (i <= 255){
+    while (i <= 127){
         System.out.println("Ascii value of     " + (char)i + "    is : " + i);
         i++;
     }

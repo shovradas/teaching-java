@@ -6,7 +6,7 @@ public class number22_factorial {
         int factorial = 1;
         for(int i =1; i<=num; i ++){
             factorial = factorial*i;
-            System.out.println(factorial);
         }
+        System.out.println(factorial);
     }
 }

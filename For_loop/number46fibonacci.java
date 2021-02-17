@@ -13,7 +13,7 @@ public class number46fibonacci {
             t1 = t2;            
             t2 = sum;
             if (i<n){
-                System.out.print("+");
+                System.out.print(",");
             }
 
         }

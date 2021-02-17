@@ -3,7 +3,7 @@ package Loops.While.Number;
 public class nine_comp {
     public static void main(String[] args) {
 
-        int number = 1234567;
+        int number = 1234;
         int reminder = 0;
         int count = 0;
         int n_complement = 0;

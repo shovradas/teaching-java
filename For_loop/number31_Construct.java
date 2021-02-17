@@ -1,7 +1,7 @@
 package For_loop;
 
 import java.util.Scanner;
-
+//Write a program that will take the N number of digits as input and construct the number out of those digits. Print the constructed number
 public class number31_Construct {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
