@@ -7,36 +7,22 @@ public class Number53_positive_input {
     public static void main(String[] args) {
         int[] a = new int[5];
         Scanner scanner = new Scanner(System.in);
-
-        a[0] = scanner.nextInt();
-        if (a[0] < 0) {
-            System.out.println("Error");
-            System.out.println("invalid input");
-        } else {
-            a[1] = scanner.nextInt();
+        int previousInput = 0;
+        System.out.println ("Enter values up to  100 values, " +
+                "enter a negative number to quit");
+        for (int i=0; i< a.length; i++)
+        {
+            a[i] = scanner.nextInt();
+            if (a[i] < 0)
+            {
+                previousInput = i;
+                break;
+            }
         }
-        if (a[1] < 0) {
-            System.out.println("error");
-            System.out.println(a[0]);
-        } else {
-            a[2] = scanner.nextInt();
+        System.out.println("inputs:");
+        for (int i =0; i<previousInput; i++)
+        {
+            System.out.println(a[i]);
         }
-        if (a[2] < 0) {
-            System.out.println("error");
-            System.out.println(a[1]);
-        } else {
-            a[3] = scanner.nextInt();
-        }
-        if (a[4] < 0) {
-            System.out.println("error");
-            System.out.println(a[2]);
-        } else {
-            a[4] = scanner.nextInt();
-        }
-        if (a[4] < 0) {
-            System.out.println("error");
-            System.out.println(a[3]);
-        }
-        System.out.println(a[0]+","+a[1]+","+a[2]+","+a[3]+","+a[4]);
     }
 }

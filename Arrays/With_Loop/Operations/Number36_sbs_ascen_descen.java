@@ -4,11 +4,14 @@ public class Number36_sbs_ascen_descen {
     public static void main(String[] args) {
         int[] a = new int[]{20, 25, 30, 5, 10};
         int[] b = new int[]{10, 20, 30, 40, 50};
-
-        System.out.println(a[0]+" "+b[4]);
-        System.out.println(a[1]+" "+b[3]);
-        System.out.println(a[2]+" "+b[2]);
-        System.out.println(a[3]+" "+b[1]);
-        System.out.println(a[4]+" "+b[0]);
+        
+        for(int i = 0; i<a.length; i++){
+            System.out.println(a[i]+" "+b[a.length-(i+1)]);
+        }
+        // System.out.println(a[0]+" "+b[4]);
+        // System.out.println(a[1]+" "+b[3]);
+        // System.out.println(a[2]+" "+b[2]);
+        // System.out.println(a[3]+" "+b[1]);
+        // System.out.println(a[4]+" "+b[0]);
     }
 }

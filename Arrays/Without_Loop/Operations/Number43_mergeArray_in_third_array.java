@@ -8,10 +8,10 @@ public class Number43_mergeArray_in_third_array {
 
         System.out.println(c.length);
         c[0] =  a[0];
-        c[1] =  b[0];
-        c[2] =  a[1];
-        c[3] =  b[1];
-        c[4] =  a[2];
+        c[1] =  a[1];
+        c[2] =  a[2];
+        c[3] =  b[0];
+        c[4] =  b[1];
         c[5] =  b[2];
 
         System.out.print("{"+c[0]+ ",");
