@@ -6,7 +6,7 @@ public class number9_print_all_element_where_index_number_even {
         int[] a = new int[] { 10, 25, 30, 45, 55 };
         for (int i = 0; i <= a.length; i++) {
             if (i % 2 == 0) {
-                System.out.println("Element" + i + " : " + a[i]);
+                System.out.println("index" + i + " : " + a[i]);
             }
         }
 

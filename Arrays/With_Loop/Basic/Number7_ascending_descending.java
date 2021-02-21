@@ -4,6 +4,14 @@ public class Number7_ascending_descending {
     public static void main(String[] args) {
         int[] a = new int[] {1, 2, 3, 4, 5, 6};
         int b[]= new int[a.length];
+        //for(int i=0; i<b.length/2; i++)
+        // {
+        //     b[i]=a[i];
+        // }
+        // for(int i=b.length-1; i>=3; i--)
+        // {
+        //     b[i]=a[]
+        // }
 
         b[0]=a[0];
         b[1]=a[1];

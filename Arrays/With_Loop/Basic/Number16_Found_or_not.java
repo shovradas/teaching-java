@@ -12,10 +12,9 @@ public static void main(String[] args) {
     scanner.close();
     //int i = a.length;
     for(int i = 0; i<a.length; i++){
-        if(n==a[i]){
-            System.out.println("index : " + i);
+        if(n!=a[i]){
         }
-        else{ System.out.println("not found");}
+        else {System.out.println("index : " + i);}; 
     }
     
     // if (n==a[0]){ System.out.println("index : " +0);}

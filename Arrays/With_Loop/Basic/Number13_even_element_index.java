@@ -5,7 +5,7 @@ public class Number13_even_element_index {
         int[] a = new int[]{ 5, 10, 15, 20, 25, 30};
         for (int i = 0; i < a.length; i++) {
             if (a[i] % 2 == 0) {
-                System.out.println("Element" + i + " : " + a[i]);
+                System.out.println("Index" + i + " ");
             }
         }
         // int i = a.length;

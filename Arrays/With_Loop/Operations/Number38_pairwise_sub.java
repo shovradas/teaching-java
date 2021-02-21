@@ -3,7 +3,7 @@ package Arrays.With_Loop.Operations;
 public class Number38_pairwise_sub {
     public static void main(String[] args) {
         int[] a = new int[]{20, 25, 30, 5, 10};
-        int[] b = new int[]{10, 20, 15, 5, 15};
+        int[] b = new int[]{10, 20, 30, 40, 50};
 
         for(int i = 0; i<a.length; i++){
             System.out.println (a[i] - b[i]);
