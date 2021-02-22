@@ -1,5 +1,5 @@
 package String.StringBuilder;
-
+//Write a program that will replace a given character with an asterisk(*) in a given string and print.
 public class Number24_replace_char {
     public static void main(String[] args) {
         StringBuilder a = new StringBuilder("hello hobart");

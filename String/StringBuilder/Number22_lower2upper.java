@@ -9,12 +9,13 @@ public class Number22_lower2upper {
         {
             if (a.charAt(i) >=97 && a.charAt(i)<=122){
                 a_char = (char) (int) (a.charAt(i)-32);
-                System.out.print(a_char);
+                a.setCharAt(i, a_char);
             }
             if(a.charAt(i) == ' '){
                 System.out.print( ' ');
             }
         }
+        System.out.print(a);
     }
 }
 

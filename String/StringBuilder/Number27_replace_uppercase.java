@@ -8,12 +8,12 @@ public class Number27_replace_uppercase {
         for( i=0;i < a.length();i++){
             if (a.charAt(i) >=97 && a.charAt(i)<=122){
                 a_char = (char) (int) (a.charAt(i)-32);
-                System.out.print(a_char);  
-            } else { 
-                System.out.print(a.charAt(i));}
+                a.setCharAt(i, a_char);
+            } 
             if(a.charAt(i) == ' '){
                 System.out.print( ' ');
             }
         }
+        System.out.print(a); 
     }
 }

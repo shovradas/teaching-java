@@ -1,5 +1,5 @@
 package String.StringBuilder;
-
+//Write a program to transform a given uppercase string to lowercase and print.
 public class Number23_upper2lower {
     public static void main(String[] args) {
         
@@ -11,8 +11,12 @@ public class Number23_upper2lower {
         {
             if (a.charAt(i) >=65 && a.charAt(i)<=90){
                 a_char = (char) (int) (a.charAt(i)+32);
-                System.out.print(a_char);
+                a.setCharAt(i, a_char);
+            }
+            if(a.charAt(i) == ' '){
+                System.out.print( ' ');
             }
         }
+        System.out.print(a);
     }
 }

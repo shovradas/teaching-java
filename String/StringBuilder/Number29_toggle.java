@@ -8,12 +8,13 @@ public class Number29_toggle {
         for( i=0;i < a.length();i++){
             if (a.charAt(i) >=65 && a.charAt(i)<=90){
                 a_char = (char) (int) (a.charAt(i)+32);
-                System.out.print(a_char);  
+                a.setCharAt(i, a_char); 
             } else { a_char = (char) (int) (a.charAt(i)-32);
-                System.out.print(a_char);}
+                a.setCharAt(i, a_char);}
             if(a.charAt(i) == ' '){
                 System.out.print( ' ');
             }
         }
+        System.out.println(a);
     }
 }
