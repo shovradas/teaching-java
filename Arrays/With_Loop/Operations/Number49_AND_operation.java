@@ -4,9 +4,10 @@ public class Number49_AND_operation {
     public static void main(String[] args) {
         boolean[] a = new boolean[] { true, false, true, true};
         boolean[] b = new boolean[] { true, true, false, false};
-
-        for(int i = 0; i<a.length; i++){
-            System.out.println(a[i] & b[i]);
+        int i;
+        for( i = 0; i<a.length; i++){
+            a[i]=a[i] & b[i];
+            System.out.println(a[i]);
         }
 
         // System.out.println (a[0] && b[0]);

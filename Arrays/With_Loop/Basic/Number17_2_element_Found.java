@@ -5,38 +5,49 @@ import java.util.Scanner;
 
 public class Number17_2_element_Found {
     public static void main(String[] args) {
-        int[] a = new int[] { 5, 10, 15 };
+        int[] a = new int[] { 5, 10, 15, 20, 20, 30 };
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter 1st number : ");
         int n = scanner.nextInt();
         System.out.print("Enter 2nd number : ");
         int m = scanner.nextInt();
         scanner.close();
-        //int i = a.length;
-        for(int i=0; i<a.length; i++){
-        if ((n == a[i]) && (m == a[i+1])) {
-            System.out.println("index " + i + " & index " + (i+1));
-        }
-    }
-        // System.out.println("-----If none of them were found then print not
-        // found------");
+        int i;
+        int n_index = -1;
+        int m_index = -1;
 
-        if (((n == a[0]) || (m == a[1])) || ((n == a[1]) || (m == a[2])) || ((n == a[2]) || (m == a[0]))) {
-            // System.out.println(" found");
-        } else {
+        for (i = 0; i < a.length; i++) {
+            if (n == a[i]) {
+                n_index = i;
+                System.out.println(n_index);
+                break;
+            }
+        }
+        // if (n_index == -1) {
+        // System.out.println("not found");
+        // }
+        // ------------------m--------------------------
+        for (i = 0; i < a.length; i++) {
+            if (m == a[i]) {
+                m_index = i;
+                System.out.println(m_index);
+                break;
+            }
+        }
+        // if (m_index == -1) {
+        // System.out.println("not found");
+        // }
+        if (n_index == -1 && m_index == -1) {
             System.out.println("not found");
         }
-
-        // System.out.println("Any one has found");
-
-        for(int i=0; i<a.length; i++){
-            if (n == a[i]) {
-                System.out.println(m + "couldn't be found");
-            } else{}
-            if (m==a[i]) {
-                System.out.println(n + "couldn't be found");
-            }else{}
+        // ------------------any one found------------------
+        for (i = 0; i < a.length; i++) {
+            if ((n == a[i])) { 
+                System.out.println(m + "is not found");
+            }
+            if (m == a[i]) {
+                System.out.println(m + "is not found");
+            }
         }
-        
-    }}
-
+    }
+}

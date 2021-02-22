@@ -5,7 +5,8 @@ public class Number51_XOR_operation {
         boolean[] a = new boolean[] { false, false, true, true};
         boolean[] b = new boolean[] { false, true, false, true};
         for(int i = 0; i<a.length; i++){
-            System.out.println(a[i] ^ b[i]);
+            a[i]=a[i] ^ b[i];
+            System.out.println(a[i]);
         }
 
         // System.out.println (a[0] ^= b[0]);
