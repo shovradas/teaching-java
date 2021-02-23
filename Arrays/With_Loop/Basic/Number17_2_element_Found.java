@@ -23,9 +23,6 @@ public class Number17_2_element_Found {
                 break;
             }
         }
-        // if (n_index == -1) {
-        // System.out.println("not found");
-        // }
         // ------------------m--------------------------
         for (i = 0; i < a.length; i++) {
             if (m == a[i]) {
@@ -34,9 +31,6 @@ public class Number17_2_element_Found {
                 break;
             }
         }
-        // if (m_index == -1) {
-        // System.out.println("not found");
-        // }
         if (n_index == -1 && m_index == -1) {
             System.out.println("not found");
         }

@@ -1,6 +1,6 @@
 package Object_Array;
 //Write a program to print all the students having CGPA between 3.25 to 3.5, from a given student array. Print "No records available" if no student is under probation.
-class Student {
+class Student3 {
     int id;
     String name;
     float cgpa;

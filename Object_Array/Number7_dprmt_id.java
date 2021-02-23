@@ -1,7 +1,7 @@
 package Object_Array;
 //Write a program to print the department of the Student with id=1 from a given student array. Print "Student does not exist" if the student is not found.
 
-class Student {
+class Student6 {
     int id;
     String name;
     float cgpa;

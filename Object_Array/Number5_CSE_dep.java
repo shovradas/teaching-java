@@ -1,7 +1,7 @@
 package Object_Array;
 //Write a program to find the students under the "CSE" department from a given student array. Print "No records available" if no student is found under "CSE" department.
 
-class Student {
+class Student4 {
     int id;
     String name;
     float cgpa;

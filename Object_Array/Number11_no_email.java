@@ -1,7 +1,7 @@
 package Object_Array;
 //Write a program to find students who do not have an email yet. Print "All data up-to-date" if the student is not found.
 
-class Student1 {
+class Student10 {
     int id;
     String name;
     float cgpa;

@@ -1,7 +1,7 @@
 package Object_Array;
 //Write a program to find the student having id=1 from a given Student array. Print the student details if found. Print "Could not be found" if the student is not found.
 
-class Student {
+class Student1 {
     int id;
     String name;
     float cgpa;

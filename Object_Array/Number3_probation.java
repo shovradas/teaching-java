@@ -1,7 +1,7 @@
 package Object_Array;
 
 //Write a program to print the details of all the probation students from a given student array. Students having a CGPA under 2.5 are considered probation students. Print "No student is under probation" if no student is under probation.
-class Student {
+class Student2 {
     int id;
     String name;
     float cgpa;

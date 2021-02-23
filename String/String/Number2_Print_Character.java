@@ -5,8 +5,6 @@ public class Number2_Print_Character {
         String a = "Hello";
         char i;
 
-        //System.out.println(a.charAt(0));
-
         for(i= 0; i<a.length();i++){
             System.out.println(a.charAt(i));
         }

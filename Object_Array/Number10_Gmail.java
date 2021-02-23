@@ -1,7 +1,7 @@
 package Object_Array;
 //Write a program to find students who use "Gmail" as their email provider from a given student array. Print "No student uses Gmail" if the student is not found.
 
-class Student {
+class Student9 {
     int id;
     String name;
     float cgpa;

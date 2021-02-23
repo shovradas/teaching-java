@@ -1,7 +1,7 @@
 package Object_Array;
 //Write a program to find students whose names start with "A" from a given student array. Print "No such student exists" if the student is not found.
 
-class Student {
+class Student7 {
     int id;
     String name;
     float cgpa;
