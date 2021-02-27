@@ -1,0 +1,4 @@
+id, name, cgpa
+1, Bob, 3.64
+2, Alice, 3.25
+3, Eve, 2.3

@@ -2,7 +2,7 @@ package ArrayList;
 
 import java.util.ArrayList;
 
-class Student {
+class Student7 {
     int id;
     String name;
     float cgpa;
@@ -10,7 +10,7 @@ class Student {
     String email;
 }
 
-public class StudentList {
+public class Number8_Name_Starts {
     public static void main(String[] args) {
         ArrayList<Student> students = new ArrayList<Student>();
         Student student0 = new Student();
@@ -45,13 +45,20 @@ public class StudentList {
         student3.email = "b@gmail.com";
         students.add(student3);
 
+        int index = -1;
+        String start = "A";
         for (int i = 0; i < students.size(); ++i) {
-            System.out.println(students.get(i).id);
-            System.out.println(students.get(i).name);
-            System.out.println(students.get(i).cgpa);
-            System.out.println(students.get(i).department);
-            System.out.println(students.get(i).email);
-            System.out.println("----");
+            if (start.charAt(0) == students.get(i).name.charAt(0)) {
+                index = i;
+                System.out.println(students.get(index).id);
+                System.out.println(students.get(index).name);
+                System.out.println(students.get(index).cgpa);
+                System.out.println(students.get(index).department);
+                System.out.println(students.get(index).email);
+            }
+        }
+        if (index == -1) {
+            System.out.println("No such student exists");
         }
     }
 }

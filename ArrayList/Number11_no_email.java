@@ -10,7 +10,7 @@ class Student {
     String email;
 }
 
-public class StudentList {
+public class Number11_no_email {
     public static void main(String[] args) {
         ArrayList<Student> students = new ArrayList<Student>();
         Student student0 = new Student();
@@ -45,13 +45,19 @@ public class StudentList {
         student3.email = "b@gmail.com";
         students.add(student3);
 
+        int index = -1;
         for (int i = 0; i < students.size(); ++i) {
-            System.out.println(students.get(i).id);
-            System.out.println(students.get(i).name);
-            System.out.println(students.get(i).cgpa);
-            System.out.println(students.get(i).department);
-            System.out.println(students.get(i).email);
-            System.out.println("----");
+            if (students.get(i).email == null) {
+                index = i;
+                System.out.println(students.get(i).id);
+                System.out.println(students.get(i).name);
+                System.out.println(students.get(i).cgpa);
+                System.out.println(students.get(i).department);
+                System.out.println(students.get(i).email);
+            }
+        }
+        if (index == -1) {
+            System.out.println("All data up-to-date");
         }
     }
 }

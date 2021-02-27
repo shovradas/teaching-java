@@ -1,6 +1,8 @@
 package Object_Array;
 //Write a program to find the students under the "CSE" department from a given student array. Print "No records available" if no student is found under "CSE" department.
 
+import IfElse.Number.Equality;
+
 class Student4 {
     int id;
     String name;
@@ -39,13 +41,13 @@ public class Number5_CSE_dep {
         students[3].id = 6;
         students[3].name = "Kat";
         students[3].cgpa = 2.33f;
-        students[3].department = "History";
-        //students[3].department = "CSE";
+        //students[3].department = "History";
+        students[3].department = "CSE";
         students[3].email = "k@gmail.com";
 
         int index = -1;
         for (int i = 0; i < students.length; ++i) {
-            if (students[i].department== "CSE" ) {
+            if (students[i].department.equals("CSE") ) {
                 index = i;
                 System.out.println(students[index].id);
                 System.out.println(students[index].name);

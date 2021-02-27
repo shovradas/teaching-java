@@ -2,15 +2,7 @@ package ArrayList;
 
 import java.util.ArrayList;
 
-class Student {
-    int id;
-    String name;
-    float cgpa;
-    String department;
-    String email;
-}
-
-public class StudentList {
+public class Number9_ends_with_S {
     public static void main(String[] args) {
         ArrayList<Student> students = new ArrayList<Student>();
         Student student0 = new Student();
@@ -45,13 +37,20 @@ public class StudentList {
         student3.email = "b@gmail.com";
         students.add(student3);
 
+        int index = -1;
+        String ends = "S";
         for (int i = 0; i < students.size(); ++i) {
-            System.out.println(students.get(i).id);
-            System.out.println(students.get(i).name);
-            System.out.println(students.get(i).cgpa);
-            System.out.println(students.get(i).department);
-            System.out.println(students.get(i).email);
-            System.out.println("----");
+            if (ends.charAt(0) == students.get(i).name.charAt((students.get(i).name.length()) - 1)) {
+                index = i;
+                System.out.println(students.get(index).id);
+                System.out.println(students.get(index).name);
+                System.out.println(students.get(index).cgpa);
+                System.out.println(students.get(index).department);
+                System.out.println(students.get(index).email);
+            }
+        }
+        if (index == -1) {
+            System.out.println("No such student exists");
         }
     }
 }

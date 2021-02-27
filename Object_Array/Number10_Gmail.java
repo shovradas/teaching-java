@@ -48,10 +48,10 @@ public class Number10_Gmail {
         students[3].email = "k@gmail.com";
 
         int index = -1;
-        String gmail = "gmail";
+        String mail = "gmail";
         for (int i = 0; i < students.length; ++i) {
-            if (gmail.length() <= students[1].email.length()) {
-                if (gmail.charAt(i) <= students[i].email.charAt(i))
+                //if (mail.charAt(i) <= students[i].email.charAt(i))
+                if ( students[i].email.contains(mail)){
                 index = i;
                 System.out.println(students[i].id);
                 System.out.println(students[i].name);

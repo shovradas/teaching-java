@@ -44,7 +44,7 @@ public class Number6_CSE_or_EEE {
 
         int index = -1;
         for (int i = 0; i < students.length; ++i) {
-            if ((students[i].department== "CSE" ) || (students[i].department== "EEE" )) {
+            if ((students[i].department.equals("CSE") ) || (students[i].department.equals("EEE") )) {
                 index = i;
                 System.out.println(students[index].id);
                 System.out.println(students[index].name);
