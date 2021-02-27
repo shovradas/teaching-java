@@ -13,22 +13,15 @@ public class problem2_sum {
         File file = new File("pairs.txt");
         FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader);
-
-        String line = reader.readLine(); //****** one of the way
-        int sum = 0;
-        while(line != null){
-        //System.out.println(line);
-        line = reader.readLine();
-        sum +=Integer.parseInt(line);
-        System.out.println(sum);
+        String line = reader.readLine(); 
+        int sum = 0;       
+        while(line !=null){          
+            String[] parts = line.split(" ");
+            System.out.print( parts [0] + " + ");
+            System.out.print(parts[1] + " = ");
+            sum = Integer.parseInt (parts[0]) + Integer.parseInt(parts[1]);
+            System.out.println(sum);
+            line = reader.readLine();
         }
-        
-        // int data;
-        // while((data = fileReader.read()) != -1){
-        //     System.out.print((char) data);
-        // }
-
-        
-
     }
 }
