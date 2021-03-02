@@ -6,22 +6,21 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class problem5_write_sum {
-
+public class problem8 {
     public static void main(String[] args) throws IOException {
-        File file = new File("pairs5.txt");
+        File file = new File("input8.txt");
         FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader);
         String line = reader.readLine(); 
         
-        int sum = 0;       
+        String sum = null;       
         while(line !=null){      
-            FileWriter writer = new FileWriter(file, true);    
+            FileWriter writer = new FileWriter("output8.txt", true);    
             String[] parts = line.split(" ");
-            writer.write( parts [0] + " + ");
-            writer.write(parts[1] + " = ");
-            sum = Integer.parseInt (parts[0]) + Integer.parseInt(parts[1]);
-            writer.write(Integer.toString(sum));
+            // writer.write( parts [0] + ",");
+            // writer.write(parts[1]);
+            sum = (parts[0]) + " , "+(parts[1]);
+            writer.write(sum);
             writer.write("\n");
             line = reader.readLine();
             writer.close();
