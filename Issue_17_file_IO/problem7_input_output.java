@@ -11,18 +11,19 @@ public class problem7_input_output {
         File file = new File("input.txt");
         FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader);
-        String line = reader.readLine(); 
-        int num;
-        int sum = 0;       
-        while(line !=null){      
-
-            FileWriter writer = new FileWriter("output.txt", true);  
-            num = Integer.parseInt(reader.readLine());  
-            sum = sum + num;
-            writer.write(Integer.toString(sum));
-            writer.write("\n");
-            writer.close();
+        
+        int sum = 0;
+        int num = 0;
+        String line = reader.readLine();
+        while (line != null) {
+            num =  Integer.parseInt(line.trim());
+            sum = sum+num;
+            line = reader.readLine(); 
         }
         reader.close();
+        FileWriter writer = new FileWriter("output.txt");   
+        writer.write("sum = " + sum);
+        writer.close();
     }
 }
+

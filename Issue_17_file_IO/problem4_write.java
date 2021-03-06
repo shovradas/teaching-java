@@ -10,19 +10,16 @@ public class problem4_write {
     public static void main(String[] args) throws IOException {
         File file = new File("numbers4.txt");
         Scanner scanner = new Scanner(System.in);
+        FileWriter writer = new FileWriter(file, true);
         int num;
         int n = 3;
         //int sum = 0;
-        while (n > 0) {
-            FileWriter writer = new FileWriter(file, true);
+        for (int i =1; i<=n; i++){
             num = scanner.nextInt();
-            writer.write(Integer.toString(num = scanner.nextInt()));
-            //sum = sum+num;
-            writer.write("\n");
             writer.write(Integer.toString(num));
-            writer.close();
-            n--;
+            writer.write("\n");
         }
-
+        writer.close();
+        scanner.close();
     }
 }

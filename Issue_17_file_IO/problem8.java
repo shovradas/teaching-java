@@ -11,20 +11,18 @@ public class problem8 {
         File file = new File("input8.txt");
         FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader);
+        FileWriter writer = new FileWriter("output8.txt", true);    
         String line = reader.readLine(); 
         
         String sum = null;       
         while(line !=null){      
-            FileWriter writer = new FileWriter("output8.txt", true);    
             String[] parts = line.split(" ");
-            // writer.write( parts [0] + ",");
-            // writer.write(parts[1]);
             sum = (parts[0]) + " , "+(parts[1]);
             writer.write(sum);
             writer.write("\n");
             line = reader.readLine();
-            writer.close();
         }
         reader.close();
+        writer.close();
     }
 }

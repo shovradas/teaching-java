@@ -26,3 +26,5 @@ public class problem6_remove_duplicacy {
         }
     }
 }
+
+//read charecter not line -> 
