@@ -41,54 +41,45 @@ public class Number6_edit_number {
         
         while((line = reader.readLine()) != null) {
             String[] parts = line.split(",");
-            ContactModC con = new ContactModC(parts[0], parts[1], parts[2]);
+            String name = parts[0];
+            String phone=parts[1];
+            String email=parts[2];
+            ContactModC con = new ContactModC(name, phone, email);
             contacts.add(con);
         }
         
         for(int i = 0; i<contacts.size();i++){
-            if (contacts.get(i).name.equals(new_name)){
+            ContactModC contact = contacts.get(i);
+            if (contact.name.equals(new_name)){
                 System.out.println("---------------------");
-                System.out.println("PHONE : " + contacts.get(i).phone);
-                System.out.println("Email : " + contacts.get(i).email);
+                System.out.println("PHONE : " + contact.phone);
+                System.out.println("Email : " + contact.email);
                 System.out.println("---------------------");
                 
                 System.out.print("Enter a new phone or press Enter to skip: ");
                 new_phone = scanner.nextLine();
-                
-                for(ContactModC myObj : contacts) { //object is iterating. //https://stackoverflow.com/questions/54511107/how-to-get-the-index-of-object-by-its-property-in-java-list?fbclid=IwAR1qTO-xj7nkw3VioVu-0WHvnJZG_w4Ty8mxT1iZsTDp_mVcpyWl72Jj1DE
-                    if(new_name.equals(myObj.name)){
-                        myObj.phone=new_phone;
-                        break;
-                    }
-                    //pos++;
+                if(new_phone==""){
+                contact.phone = contact.phone;
                 }
-                //System.out.println(pos);
+                else{ contact.phone = new_phone;}
+
                 System.out.print("Enter a new phone or press Enter to skip: ");
                 new_email = scanner.nextLine();
-                
-                for(ContactModC myObj : contacts) { //object is iterating. //https://stackoverflow.com/questions/54511107/how-to-get-the-index-of-object-by-its-property-in-java-list?fbclid=IwAR1qTO-xj7nkw3VioVu-0WHvnJZG_w4Ty8mxT1iZsTDp_mVcpyWl72Jj1DE
-                    if(new_name.equals(myObj.name)){
-                        myObj.email=new_email;
-                        break;
-                    }
+                if(new_email == ""){
+                contact.email=contact.email;
                 }
-                System.out.println("---------------------");
-            }
-            else{
+                else{ contact.email=new_email;}
+
                 System.out.println("Message: Contact updated successfully");
-            }   
+            } 
         }
         FileWriter writer = new FileWriter(file);
         for(int i = 0; i<contacts.size();i++){
-                // System.out.print(contacts.get(i).name + "\t");
-                // System.out.print(contacts.get(i).phone + "\t");
-                // System.out.println(contacts.get(i).email);
                 writer.write(contacts.get(i).name + ",");
                 writer.write(contacts.get(i).phone + ",");
                 writer.write(contacts.get(i).email + "\n");
         }   
         reader.close();
-        scanner.close();
         writer.close();
     }
 }

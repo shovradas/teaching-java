@@ -13,14 +13,13 @@ class ContactAddC {
     String phone;
     String email;
 
-    public ContactAddC(String name, String phone, String email) { 
+    public ContactAddC(String name, String phone, String email) {
         this.name = name;
         this.phone = phone;
         this.email = email;
     }
-    public ContactAddC(){
-    }
 }
+
 public class Number4_addnew_contact {
     public static void main(String[] args) throws IOException {
 
@@ -29,62 +28,59 @@ public class Number4_addnew_contact {
         BufferedReader reader = new BufferedReader(fileReader);
         FileWriter writer = new FileWriter(file, true);
         Scanner scanner = new Scanner(System.in);
-        
+
         String line;
         String name = " ";
         String phone = " ";
         String email = " ";
 
         LinkedList<ContactSC> contacts = new LinkedList<ContactSC>();
-        //System.out.println( "Name" + "\t" + "Phone" + "\t\t" + "Email");
-        while((line = reader.readLine()) != null) {
+        while ((line = reader.readLine()) != null) {
             String[] parts = line.split(",");
             ContactSC con = new ContactSC(parts[0], parts[1], parts[2]);
             contacts.add(con);
         }
-        
-        for(int i = 0; i<contacts.size();i++) {
-            System.out.println("Enter contact name");
-            name = scanner.nextLine();
-            if (contacts.get(i).name.contains(name)){
-                System.out.println("Enter unique name please. ");
+
+        System.out.println("Enter contact name");
+        name = scanner.nextLine();
+        System.out.println("Enter contact phone");
+        phone = scanner.nextLine();
+        System.out.println("Enter contact email");
+        email = scanner.nextLine();
+
+        int index = -1;
+        for (int i = 0; i < contacts.size(); i++) {
+            if (contacts.get(i).name.equals(name)) {
+                index = i;
+                System.out.println("Plese Enter an unique name. ");
                 break;
-            }  
-            else{
-                writer.write("\n" + name);
             }
-            
-            
-            System.out.println("Enter contact phone");
-            phone = scanner.nextLine();
-            if (contacts.get(i).phone.contains(phone)){
-                System.out.println("Enter unique phone please. ");
+            if (contacts.get(i).phone.equals(phone)) {
+                index = i;
+                System.out.println("Plese Enter an unique phone. ");
                 break;
-            }  
-            else{
-                writer.write("," + phone);
-                // if(phone.startsWith("+880")){
-                // }
             }
 
-
-            System.out.println("Enter contact email");
-            email = scanner.nextLine();
-            if (contacts.get(i).email.contains(email)){
-                System.out.println("Enter unique email please. ");
-                break;
-            }  
-            else{
-                writer.write("," + email);
+            if (contacts.get(i).email.equals(email)) {
+                System.out.println("Please Enter unique email. ");
                 break;
             }
         }
-        ContactSC con1 = new ContactSC(name,phone, email);
+        if (index == -1) {
+            writer.write("\n" + name);
+
+            if ((phone.startsWith("+")) || (phone.startsWith("00"))) {
+                writer.write("," + phone);
+            } else {
+                writer.write("," + "+88" + phone);
+            }
+
+            writer.write("," + email);
+        }
+        ContactSC con1 = new ContactSC(name, phone, email);
         contacts.add(con1);
-        System.out.println("----------------");
 
         reader.close();
-        scanner.close();
         writer.close();
     }
 }

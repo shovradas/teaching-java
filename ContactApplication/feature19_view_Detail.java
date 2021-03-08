@@ -9,17 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-class Contact {
-    String name;
-    String phone;
-    String email;
 
-    public Contact(String name, String phone, String email) { //constractor -> object er initializer hisebe kaj kore
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-    }
-}
 
 public class feature19_view_Detail {
     public static void main(String[] args) throws IOException {

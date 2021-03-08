@@ -62,16 +62,12 @@ public class Number5_delete_contact {
         }
         FileWriter writer = new FileWriter(file);
         for(int i = 0; i<contacts.size();i++){
-                // System.out.print(contacts.get(i).name + "\t");
-                // System.out.print(contacts.get(i).phone + "\t");
-                // System.out.println(contacts.get(i).email);
                 writer.write(contacts.get(i).name + ",");
                 writer.write(contacts.get(i).phone + ",");
                 writer.write(contacts.get(i).email + "\n");
         }   
         
         reader.close();
-        scanner.close();
         writer.close();
     }
 }
