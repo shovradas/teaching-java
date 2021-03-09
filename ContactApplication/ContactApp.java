@@ -29,14 +29,20 @@ public class ContactApp {
         return contacts;
     }
     
-    void viewAll() throws IOException {
+    void print(File file, LinkedList<Contact> contacts) throws Exception{
+        String line;
+        for(int i = 0; i<contacts.size();i++){
+            Contact contact = contacts.get(i);
+            line =  contact.name + "\t" +  contact.phone + "\t"+ contact.email;
+            System.out.println(line);
+        }
+    }
+    
+    void viewAll() throws Exception {
         LinkedList<Contact> contacts = getContacts(file);
         System.out.println("Name" + "\t" + "Phone" + "\t\t" + "Email");
-        for (int i = 0; i < contacts.size(); i++) {
-            System.out.print(contacts.get(i).name + "\t");
-            System.out.print(contacts.get(i).phone + "\t");
-            System.out.print(contacts.get(i).email + "\n");
-        }
+
+        print(file, contacts);
         System.out.println("----------------");
         System.out.println("total " + contacts.size() + " records");
     }
@@ -65,10 +71,11 @@ public class ContactApp {
         System.out.println( "Name" + "\t" + "Phone" + "\t\t" + "Email");
         
         for(int i = 0; i<contacts.size();i++){
-            if ((contacts.get(i).name.contains(search_term))||(contacts.get(i).phone.contains(search_term))||(contacts.get(i).email.contains(search_term))){
-                System.out.print(contacts.get(i).name + "\t");
-                System.out.print(contacts.get(i).phone + "\t");
-                System.out.println(contacts.get(i).email);
+            Contact contact = contacts.get(i);
+            if ((contact.name.contains(search_term))||(contact.phone.contains(search_term))||(contact.email.contains(search_term))){
+                String line;
+                line =  contact.name + "\t" +  contact.phone + "\t"+ contact.email;
+                System.out.println(line);
                 count++;
             }   
         }
@@ -160,13 +167,14 @@ public class ContactApp {
                 }
             }   
         }
+
         save(file, contacts);
     }
-    
+ 
     void editContact() throws Exception{
         LinkedList<Contact> contacts = getContacts(file);
-        
         System.out.print("Enter name: ");
+
         String new_name = scanner.nextLine();
         String new_phone;
         String new_email;
@@ -196,6 +204,7 @@ public class ContactApp {
                 System.out.println("Message: Contact updated successfully");
             } 
         }
+
         save(file, contacts);
     }
     public static void main(String[] args) throws Exception {
