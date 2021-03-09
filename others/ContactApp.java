@@ -9,43 +9,52 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class ContactApp {
-    File file = new File("ContactApplication/All_contact.csv");
-    Scanner scanner = new Scanner(System.in);
-
-    LinkedList<Contact> getContacts(File file) throws IOException{
-        String line;
+    void viewAll() throws IOException {
+        File file = new File("/Users/farzanaprity/Workspace/teaching-java/ContactApplication/All_contact.csv");
         FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader);
-        LinkedList<Contact > contacts = new LinkedList<Contact >();
-        while((line = reader.readLine()) != null) {
-            String[] parts = line.split(",");
-            String name = parts[0];
-            String phone=parts[1];
-            String email=parts[2];
-            Contact con = new Contact(name, phone, email);
-            contacts.add(con);
-        }
-        reader.close();
-        return contacts;
-    }
-    
-    void viewAll() throws IOException {
-        LinkedList<Contact> contacts = getContacts(file);
+        String line;
+        int count = 0;
+
+        LinkedList<Contact> contacts = new LinkedList<Contact>();
+
         System.out.println("Name" + "\t" + "Phone" + "\t\t" + "Email");
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            Contact con = new Contact(parts[0], parts[1], parts[2]);
+            contacts.add(con);
+            // split the line
+            // name, phone, email
+            // print them in a formatted way
+            count++;
+        }
         for (int i = 0; i < contacts.size(); i++) {
             System.out.print(contacts.get(i).name + "\t");
             System.out.print(contacts.get(i).phone + "\t");
             System.out.print(contacts.get(i).email + "\n");
         }
         System.out.println("----------------");
-        System.out.println("total " + contacts.size() + " records");
+        System.out.println("total " + count + " records");
+        reader.close();
     }
 
     void viewDetail() throws IOException {
-        LinkedList<Contact> contacts = getContacts(file);
+        File file = new File("/Users/farzanaprity/Workspace/teaching-java/ContactApplication/All_contact.csv");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fileReader);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter name: ");
         String search_name = scanner.next();
+        //scanner.nextLine();
+        String line;
 
+        LinkedList<Contact> contacts = new LinkedList<Contact>();
+
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            Contact con = new Contact(parts[0], parts[1], parts[2]);
+            contacts.add(con);
+        }
         for (int i = 0; i < contacts.size(); i++) {
             if (contacts.get(i).name.equals(search_name)) {
                 System.out.println("----------------");
@@ -53,16 +62,27 @@ public class ContactApp {
                 System.out.println("EMAIL : " + contacts.get(i).email);
             }
         }
+        reader.close();
     }
 
     void searchContact() throws IOException{
-        LinkedList<Contact> contacts = getContacts(file);
+        File file = new File("/Users/farzanaprity/Workspace/teaching-java/ContactApplication/All_contact.csv");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fileReader);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter search keyword: ");
         String search_term = scanner.nextLine();
         System.out.println("----------------");
+        String line;
         int count = 0;
 
+        LinkedList<Contact> contacts = new LinkedList<Contact>();
         System.out.println( "Name" + "\t" + "Phone" + "\t\t" + "Email");
+        while((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            Contact con = new Contact(parts[0], parts[1], parts[2]);
+            contacts.add(con);
+        }
         
         for(int i = 0; i<contacts.size();i++){
             if ((contacts.get(i).name.contains(search_term))||(contacts.get(i).phone.contains(search_term))||(contacts.get(i).email.contains(search_term))){
@@ -71,18 +91,32 @@ public class ContactApp {
                 System.out.println(contacts.get(i).email);
                 count++;
             }   
+            //phone r email sob e check korbe -> ja die khuje pabe tar sob detail dekhabe. if er moddhe duita ||
         }
         System.out.println("----------------");
         System.out.println(count + " Records found");
+
+        reader.close();
     }
     
     void addContact() throws IOException{
-        LinkedList<Contact> contacts = getContacts(file);
+        File file = new File("/Users/farzanaprity/Workspace/teaching-java/ContactApplication/All_contact.csv");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fileReader);
         FileWriter writer = new FileWriter(file, true);
-        
+        Scanner scanner = new Scanner(System.in);
+
+        String line;
         String name = " ";
         String phone = " ";
         String email = " ";
+
+        LinkedList<Contact> contacts = new LinkedList<Contact>();
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            Contact con = new Contact(parts[0], parts[1], parts[2]);
+            contacts.add(con);
+        }
 
         System.out.println("Enter contact name");
         name = scanner.nextLine();
@@ -103,44 +137,49 @@ public class ContactApp {
                 System.out.println("Plese Enter an unique phone. ");
                 break;
             }
+
             if (contacts.get(i).email.equals(email)) {
                 System.out.println("Please Enter unique email. ");
                 break;
             }
         }
         if (index == -1) {
-            String line;
-            line = "\n"+name;
+            writer.write("\n" + name);
 
             if ((phone.startsWith("+")) || (phone.startsWith("00"))) {
-                line = line + phone;
+                writer.write("," + phone);
             } else {
-                line = line + "," + "+88"+phone;
+                writer.write("," + "+88" + phone);
             }
 
-            line = line + "," + email;
-            writer.write(line);
+            writer.write("," + email);
         }
-    
-        writer.close();
-    }
-   
-    void save(File file, LinkedList<Contact> contacts) throws Exception{
-        String line;
-        FileWriter writer = new FileWriter(file);
-        for(int i = 0; i<contacts.size();i++){
-            Contact contact = contacts.get(i);
-            line = String.format("%s,%s,%s\n", contact.name, contact.phone, contact.email);
-            writer.write(line);
-        }
-        writer.close();
-    }
+        Contact con1 = new Contact(name, phone, email);
+        contacts.add(con1);
 
-    void removeContact() throws Exception{
-        LinkedList<Contact> contacts = getContacts(file);
+        reader.close();
+        writer.close();
+    }
+    
+    void removeContact() throws IOException{
+        File file = new File("/Users/farzanaprity/Workspace/teaching-java/ContactApplication/All_contact.csv");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fileReader);
+        
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter name: ");
         String delete_name = scanner.nextLine();
+        String line;
+
         String input;
+        
+        LinkedList<Contact > contacts = new LinkedList<Contact >();
+        
+        while((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            Contact con = new Contact(parts[0], parts[1], parts[2]);
+            contacts.add(con);
+        }
         
         for(int i = 0; i<contacts.size();i++){
             if (contacts.get(i).name.equals(delete_name)){
@@ -160,17 +199,42 @@ public class ContactApp {
                 }
             }   
         }
-        save(file, contacts);
-    }
-    
-    void editContact() throws Exception{
-        LinkedList<Contact> contacts = getContacts(file);
+        FileWriter writer = new FileWriter(file);
+        for(int i = 0; i<contacts.size();i++){
+                writer.write(contacts.get(i).name + ",");
+                writer.write(contacts.get(i).phone + ",");
+                writer.write(contacts.get(i).email + "\n");
+        }   
         
+        reader.close();
+        writer.close();
+    }
+ 
+    void editContact() throws IOException{
+        File file = new File("/Users/farzanaprity/Workspace/teaching-java/ContactApplication/All_contact.csv");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fileReader);
+        
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter name: ");
+        
+        String line;
+
         String new_name = scanner.nextLine();
         String new_phone;
         String new_email;
 
+        LinkedList<Contact > contacts = new LinkedList<Contact>();
+        
+        while((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            String name = parts[0];
+            String phone=parts[1];
+            String email=parts[2];
+            Contact con = new Contact(name, phone, email);
+            contacts.add(con);
+        }
+        
         for(int i = 0; i<contacts.size();i++){
             Contact contact = contacts.get(i);
             if (contact.name.equals(new_name)){
@@ -196,9 +260,16 @@ public class ContactApp {
                 System.out.println("Message: Contact updated successfully");
             } 
         }
-        save(file, contacts);
+        FileWriter writer = new FileWriter(file);
+        for(int i = 0; i<contacts.size();i++){
+                writer.write(contacts.get(i).name + ",");
+                writer.write(contacts.get(i).phone + ",");
+                writer.write(contacts.get(i).email + "\n");
+        }   
+        reader.close();
+        writer.close();
     }
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         ContactApp app = new ContactApp();
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to Contact app.");

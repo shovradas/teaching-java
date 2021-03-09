@@ -34,10 +34,10 @@ public class Number4_addnew_contact {
         String phone = " ";
         String email = " ";
 
-        LinkedList<ContactSC> contacts = new LinkedList<ContactSC>();
+        LinkedList<Contact> contacts = new LinkedList<Contact>();
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(",");
-            ContactSC con = new ContactSC(parts[0], parts[1], parts[2]);
+            Contact con = new Contact(parts[0], parts[1], parts[2]);
             contacts.add(con);
         }
 
@@ -77,7 +77,7 @@ public class Number4_addnew_contact {
 
             writer.write("," + email);
         }
-        ContactSC con1 = new ContactSC(name, phone, email);
+        Contact con1 = new Contact(name, phone, email);
         contacts.add(con1);
 
         reader.close();
